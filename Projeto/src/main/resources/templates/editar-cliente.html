@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Editar Cliente</h1>
+        <a th:href="@{/hoteis/{id}(id=${cliente.hotelId})}">Voltar</a>
+    </header>
+    <div class="container">
+        <form id="editarClienteForm">
+            <input type="hidden" id="clienteId" th:value="${cliente.id}"/>
+            <input type="hidden" id="hotelId" th:value="${cliente.hotelId}"/>
+            <label for="cliente">Cliente:</label>
+            <textarea id="cliente" th:text="${cliente.cliente}"></textarea><br/>
+
+            <label for="nota">Nota:</label>
+            <input type="number" id="nota" th:value="${cliente.nota}" min="1" max="10"/><br/>
+
+            <button type="button" id="salvarCliente">Salvar</button>
+            <button type="button" id="excluirCliente">Excluir</button>
+        </form>
+    </div>
+</body>
+</html>

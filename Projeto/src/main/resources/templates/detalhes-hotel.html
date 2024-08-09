@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Hotel</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Hotel</h1>
+        <p><strong>Nome:</strong> <span th:text="${hotel.nome}"></span></p>
+        <p><strong>Endereço:</strong> <span th:text="${hotel.endereco}"></span></p>
+        <p><strong>Estrelas:</strong> <span th:text="${hotel.estrelas}"></span></p>
+        <a th:href="@{/hoteis}">Voltar para a lista</a>
+        <a th:href="@{/hoteis/{id}/editar(id=${hotel.id})}">Editar Hotel</a>
+    </div>
+</body>
+</html>
