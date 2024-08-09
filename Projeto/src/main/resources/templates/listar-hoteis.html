@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Hotéis</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Hotéis</h1>
+        <a href="/hoteis/novo">Adicionar Novo Hotel</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Estrelas</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="hotel : ${hoteis}">
+                    <td th:text="${hotel.id}"></td>
+                    <td th:text="${hotel.nome}"></td>
+                    <td th:text="${hotel.endereco}"></td>
+                    <td th:text="${hotel.estrelas}"></td>
+                    <td>
+                        <a th:href="@{/hoteis/{id}(id=${hotel.id})}">Detalhes</a>
+                        <a th:href="@{/hoteis/{id}/editar(id=${hotel.id})}">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

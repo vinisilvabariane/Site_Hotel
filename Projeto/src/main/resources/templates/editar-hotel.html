@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Hotel</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Hotel</h1>
+        <form action="#" th:action="@{/hoteis/{id}(id=${hotel.id})}" method="post">
+            <input type="hidden" name="_method" value="put">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" th:value="${hotel.nome}" required>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" th:value="${hotel.endereco}" required>
+
+            <label for="estrelas">Estrelas:</label>
+            <input type="number" id="estrelas" name="estrelas" th:value="${hotel.estrelas}" min="1" max="5" required>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+        <a th:href="@{/hoteis}">Cancelar</a>
+    </div>
+</body>
+</html>
