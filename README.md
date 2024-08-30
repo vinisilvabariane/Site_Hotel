@@ -1,10 +1,6 @@
 # Título do Projeto
 
-Sistema Web de Gerenciamento de [Descreva aqui o propósito do sistema, por exemplo, "Biblioteca", "Controle de Estoque", etc.]
-
-## Status do Projeto
-
-(em desenvolvimento)
+Sistema Web de Gerenciamento de Hotel
 
 ## Tecnologias Utilizadas
 
